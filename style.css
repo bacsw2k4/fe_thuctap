@@ -9,6 +9,16 @@
     font-family: 'Noto Sans JP';
 }
 
+span {
+    position: absolute;
+    color: #BD0101;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Noto Sans JP';
+    padding-top: 4px;
+    padding-left: 3px;
+}
+
 body {
     height: 100vh;
     width: 100%;
@@ -59,7 +69,7 @@ body {
     position: fixed;
     padding-top: 10px;
     margin-top: 77px;
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.3);
 }
 
 .content-left div {
@@ -189,8 +199,9 @@ td {
     width: 272px;
     height: 40px;
     border-radius: 8px;
-    padding-left: 300px;
+    padding-left: 10px;
     border: 1px solid #cccccc;
+    color: #000;
 }
 
 .header-content-right .search .btn-search {
@@ -200,11 +211,11 @@ td {
     height: 40px;
     background-color: #FF7700;
     color: white;
-    border: 1px solid #cccccc;
+    border: none;
 }
 
 .header-content-right .action {
-    padding-left: 565px;
+    padding-left: 590px;
     padding-top: 28px;
 }
 
@@ -217,7 +228,7 @@ td {
     width: 99px;
     height: 40px;
     color: white;
-    border: 1px solid #cccccc;
+    border: none;
     border-radius: 8px;
 }
 
@@ -237,7 +248,7 @@ td {
     height: 25px;
     width: 48px;
     border-radius: 8px;
-    border: 1px solid #cccccc;
+    border: none;
 }
 
 .btn-edit {
@@ -246,7 +257,7 @@ td {
     height: 25px;
     width: 48px;
     border-radius: 8px;
-    border: 1px solid #cccccc;
+    border: none;
 }
 
 .pagination {
@@ -256,11 +267,18 @@ td {
     gap: 17px
 }
 
+.pagination a {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Inter';
+}
+
 .pagination .back {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 7px;
+    opacity: 0.6;
 
 }
 
@@ -283,8 +301,11 @@ td {
 }
 
 .dot a {
-    margin-top: 9px;
+    margin-top: 20px;
     text-decoration: none;
+    position: relative;
+    top: 4px;
+    color: #000;
 
 }
 
@@ -346,8 +367,9 @@ td {
     font-size: 14px;
     width: 100px;
     height: 17px;
-    line-height: 50px;
+    line-height: 40px;
 }
+
 
 .form-adduser-group {
     width: 613px;
@@ -374,7 +396,6 @@ td {
     width: 480px;
     height: 40px;
     border-radius: 4px;
-    margin-top: 5px;
     border: 1px solid #CCCCCC;
 
 }
@@ -393,7 +414,7 @@ td {
 }
 
 .btn-adduser-group {
-    padding-left: 30px;
+    padding-left: 15px;
     padding-top: 100px;
     height: 114px;
 }
@@ -455,9 +476,242 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     content: url('./img/calendor.svg');
     position: absolute;
     right: 15px;
-    top: 35px;
+    top: 30px;
     transform: translateY(-50%);
     pointer-events: none;
     width: 20px;
     height: 20px;
+}
+
+.check-empty {
+    color: #F90A0A;
+    font-weight: 400;
+    font-family: 'Noto Sans JP';
+    font-size: 14px;
+    margin-left: 115px;
+    height: 20px;
+    position: relative;
+
+}
+
+.check-empty div {
+    position: absolute;
+    top: -10px;
+}
+
+/* css of list letter */
+.header-content-right .action2 {
+    padding-left: 565px;
+    padding-top: 28px;
+}
+
+.header-content-right .action2 a .btn-add {
+    background-color: #007EC6;
+    margin-right: 20px;
+    width: 133px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn-approval {
+    height: 25px;
+    width: 70px;
+    color: #F5F5F5;
+    gap: 8px;
+    border-radius: 8px;
+    background-color: #14AE5C;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Inter';
+    cursor: pointer;
+}
+
+.btn-cancel {
+    height: 25px;
+    width: 70px;
+    color: #F5F5F5;
+    gap: 8px;
+    border-radius: 8px;
+    background-color: #EC221F;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Inter';
+    cursor: pointer;
+}
+
+/* css of addletters */
+.form-adduser-group div textarea {
+    position: absolute;
+    right: 0px;
+    width: 480px;
+    height: 94px;
+    border-radius: 4px;
+    margin-top: 5px;
+    border: 1px solid #CCCCCC;
+
+}
+
+/* css of popup-confirm */
+.popup-confirm-cancel {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.popup-container {
+    width: 614px;
+    height: 356px;
+    position: relative;
+    justify-self: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    height: 74px;
+    background-color: #007EC6;
+    padding: 20px;
+}
+
+.popup-header p {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-family: 'Noto Sans JP';
+    font-weight: 400;
+}
+
+.popup-header img {
+    margin-top: 3px;
+}
+
+.popup-body {
+    background-color: #FFFFFF;
+    height: calc(100% - 74px);
+}
+
+.popup-body div p {
+    padding-top: 50px;
+    font-size: 24px;
+    font-family: 'Noto Sans JP';
+    font-weight: 400;
+    padding-left: 20px;
+    padding-top: 25px;
+}
+
+.popup-body div input {
+    height: 76px;
+    width: 571px;
+    margin: 20px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+}
+
+.popup-body div button {
+    height: 50px;
+    width: 220px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #007EC6;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Noto Sans JP';
+    margin-top: 10px;
+}
+
+/* css off pop2 */
+.popup-confirm {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.popup-confirm .popup-container {
+    width: 614px;
+    height: 250px;
+    position: relative;
+    justify-self: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup-confirm .popup-container.popup-header {
+    display: flex;
+    justify-content: space-between;
+    height: 74px;
+    background-color: #007EC6;
+    padding: 20px;
+}
+
+.popup-confirm .popup-container.popup-header p {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-family: 'Noto Sans JP';
+    font-weight: 400;
+}
+
+.popup-confirm .popup-container.popup-header img {
+    margin-top: 3px;
+}
+
+.popup-body2 {
+    background-color: #FFFFFF;
+    height: calc(100% - 74px);
+}
+
+.popup-body2 div p {
+    padding-top: 50px;
+    font-size: 24px;
+    font-family: 'Noto Sans JP';
+    font-weight: 400;
+    padding-left: 20px;
+    padding-top: 25px;
+}
+
+.button-group2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-group2 div .btn-ok {
+    height: 50px;
+    width: 220px;
+    background-color: #007EC6;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Noto Sans JP';
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.button-group2 div .btn-huy {
+    height: 50px;
+    width: 220px;
+    background-color: #E2005C;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Noto Sans JP';
+    margin-top: 10px;
 }

@@ -19,12 +19,12 @@
             <h1>Sanshin IT Solution</h1>
             <form method="post" action="" id="form">
                 <div class="form-group">
-                    <label>Tên đăng nhập<span style="color: red;">*</span></label>
+                    <label>Tên đăng nhập<span style="color: #BD0101;">*</span></label>
                     <input id="login_identity" type="text" name="username" style="padding-left: 10px;"
                         placeholder="Tên đăng nhập">
                 </div>
                 <div class="form-group">
-                    <label class="label-password">Mật khẩu<span style="color: red;">*</span></label>
+                    <label class="label-password">Mật khẩu<span style="color: #BD0101;">*</span></label>
                     <input id="password" type="password" name="password" style="padding-left: 10px;"
                         placeholder="Mật khẩu">
                 </div>
@@ -49,7 +49,7 @@
         const password = document.getElementById('password').value;
         if (!login_identity) {
             e.preventDefault();
-            alert_danger_empty.innerHTML = '<div>※Vui lòng nhập tên đăng nhập hoặc email</div>';
+            alert_danger_empty.innerHTML = '<div>※Tên đăng nhập hoặc mật khẩu lỗi. Vui lòng thử lại !</div>';
         }
 
         if (!password) {
@@ -59,7 +59,7 @@
 
         if (!login_identity && !password) {
             e.preventDefault();
-            alert_danger_empty.innerHTML = '<div>※Vui lòng nhập mật khẩu và tên đăng nhập hoặc email</div>';
+            alert_danger_empty.innerHTML = '<div>※Tên đăng nhập hoặc mật khẩu lỗi. Vui lòng thử lại !</div>';
         }
     })
 </script>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Letters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Sanshin</h2>
+            <p>Hệ thống quản lý đơn</p>
+        </div>
+        <div class="content">
+            <div class="content-left">
+                <div><a href="dashboard.html">Dashboard</a></div>
+                <div><a href="listuser.html">Quản lý người dùng</a></div>
+                <div><a href="listletters.html" style=" background-color: #007EC6;
+    color: white;">Quản lý đơn</a></div>
+                <div><a href="login.html">Đăng xuất</a></div>
+            </div>
+            <div class="content-right">
+                <p>Thêm mới đơn</p>
+                <form method="post" action="checkaddletters.html" id="form-adduser" enctype="multipart/form-data">
+                    <div class="form-adduser-group">
+                        <div>
+                            <label>Tiêu đề<span>*</span></label>
+                            <input type="text" name="title">
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="form-adduser-group">
+                        <div>
+                            <label>Nội dung</label>
+                            <textarea name="content" style="width: 480px; height: 94px;"></textarea>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="form-adduser-group" style="margin-top: 60px;">
+                        <div>
+                            <label>Người duyệt<span>*</span></label>
+                            <select name="categoryuser" class="option">
+                                <option>Value</option>
+                            </select>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="form-adduser-group">
+                        <div>
+                            <label>Loại đơn<span>*</span></label>
+                            <select name="categoryuser" class="option">
+                                <option>Value</option>
+                            </select>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="form-adduser-group">
+                        <div>
+                            <label>Ngày bắt đầu<span>*</span></label>
+                            <div class="date-container" style="margin-left: -21px;">
+                                <input id="datestart" type="date" name="datestart"
+                                    style="width: 189px; height: 40px;  padding: 5px; color: transparent;"
+                                    onchange="checkDateStart()">
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="form-adduser-group">
+                        <div>
+                            <label>Ngày kết thúc<span>*</span></label>
+                            <div class="date-container" style="margin-left: -23px;">
+                                <input id="dateend" type="date" name="dateend"
+                                    style="width: 189px; height: 40px;  padding: 5px; color: transparent;"
+                                    onchange="checkDateEnd()">
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+
+                    <div class="form-adduser-group">
+                        <div>
+                            <label style="position: absolute;">Đính kèm<span>*</span></label>
+                            <label for="file"
+                                style="border: 1px solid #cccccc; width: 189px; height: 40px; border-radius: 4px; display: inline-block; position: relative;margin-left: 61px; left: 65px;">
+                                <input id="file" type="file" style="width: 189px;" hidden>
+                                <img src="./img/upload.svg" alt="" srcset=""
+                                    style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
+                            </label>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="btn-adduser-group">
+                        <button class="continue" style="cursor: pointer;">Tiếp theo</button>
+                        <button class="clear" style="cursor: pointer;">Xóa trống</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function checkDateStart() {
+        const dateValue = document.getElementById("datestart").value;
+        const date = document.getElementById("datestart");
+        if (dateValue) {
+            date.style.color = "black";
+        } else {
+            date.style.color = "white";
+        }
+    }
+    function checkDateEnd() {
+        const dateValue = document.getElementById("dateend").value;
+        const date = document.getElementById("dateend");
+        if (dateValue) {
+            date.style.color = "black";
+        } else {
+            date.style.color = "white";
+        }
+    }
+</script>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add User</title>
+    <title>Check Add User</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,136 +24,120 @@
             </div>
             <div class="content-right">
                 <p>Thêm mới người dùng</p>
-                <form method="post" action="checkadduser.html" id="form-adduser">
+                <form method="post" action="" id="form-adduser">
                     <div class="form-adduser-group">
                         <div>
                             <label>Tên đăng nhập<span>*</span></label>
-                            <input type="text" name="loginname" id="username">
+                            <input type="text" name="loginname" style="background-color: #DFDFDF80;" disabled>
                         </div>
-                        <div class="check-empty check-username"></div>
+                        <div></div>
                     </div>
                     <div class="form-adduser-group">
                         <div>
                             <label>Tên người dùng<span>*</span></label>
-                            <input type="text" name="username" id="fullname">
+                            <input type="text" name="username" style="background-color:#DFDFDF80;" disabled>
                         </div>
-                        <div class="check-empty check-fullname"></div>
+                        <div></div>
                     </div>
                     <div class="form-adduser-group">
                         <div>
                             <label>Mật khẩu <span>*</span></label>
-                            <input type="password" name="password" id="password">
+                            <input type="password" name="password" style="background-color: #DFDFDF80;" disabled>
                         </div>
-                        <div class="check-empty check-password"></div>
+                        <div></div>
                     </div>
                     <div class="form-adduser-group">
                         <div>
                             <label>Email</label>
-                            <input type="email" name="email" id="email">
+                            <input type="email" name="email" style="background-color:#DFDFDF80;" disabled>
                         </div>
-                        <div class="check-empty check-email"></div>
+                        <div></div>
                     </div>
                     <div class="form-adduser-group">
                         <div>
                             <label>Ngày sinh</label>
                             <div class="date-container">
-                                <input id="birthDate" type="date" name="birthDate"
-                                    style="width: 189px; height: 40px;  padding: 5px; color: transparent;"
-                                    onchange="checkDate()">
+                                <input id="datetime" type="date" name="birthDate"
+                                    style="width: 189px; height: 40px;  padding: 5px; color: transparent; background-color: #DFDFDF80 ;"
+                                    disabled>
                             </div>
                         </div>
-                        <div>
-                        </div>
+                        <div></div>
                     </div>
                     <div class="form-adduser-group">
                         <div>
                             <label>Loại người dùng<span>*</span></label>
-                            <select name="categoryuser" class="option">
+                            <select name="categoryuser" style="background-color: #DFDFDF80;" class="option" disabled>
                                 <option>Value</option>
                                 <option>Quản lý</option>
                                 <option>Nhân viên</option>
                             </select>
-                            <div></div>
                         </div>
+                        <div></div>
                     </div>
                     <div class="form-adduser-group">
                         <div>
                             <label>Phòng ban<span>*</span></label>
-                            <select name="department" class="option">
+                            <select name="department" style="background-color:#DFDFDF80;" class="option" disabled>
                                 <option>Value</option>
                                 <option>Phòng nhân sự</option>
                                 <option>Phòng IT</option>
                                 <option>Phòng kinh doanh</option>
                                 <option>Phòng san xuat</option>
                             </select>
-                            <div></div>
                         </div>
+                        <div></div>
                     </div>
                     <div class="form-adduser-group">
                         <div>
                             <label>Trạng thái<span>*</span></label>
-                            <select name="status" class="option">
+                            <select name="status" style="background-color:#DFDFDF80;" class="option" disabled>
                                 <option>Value</option>
                                 <option>Đang hoạt động</option>
                                 <option>Đã khóa</option>
                             </select>
                         </div>
+                        <div></div>
                     </div>
                     <div class="btn-adduser-group">
-                        <button class="continue" style="cursor: pointer;">Tiếp theo</button>
-                        <button class="clear" style="cursor: pointer;">Xóa trống</button>
+                        <button class="continue" id="btn-open" style="cursor: pointer;">Lưu lại</button>
+                        <button class="clear" style="cursor: pointer;">Quay lại</button>
                     </div>
 
                 </form>
             </div>
         </div>
     </div>
-</body>
-<script>
-    function checkDate() {
-        const dateValue = document.getElementById("birthDate").value;
-        const date = document.getElementById("birthDate");
-        if (dateValue) {
-            date.style.color = "black";
-        } else {
-            date.style.color = "white";
-        }
-    }
-    document.querySelector('.clear').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('username').value = '';
-        document.getElementById('fullname').value = '';
-        document.getElementById('password').value = '';
-        document.getElementById('email').value = '';
-    })
-    document.querySelector('form').addEventListener('submit', function (e) {
-        const username = document.getElementById('username');
-        const fullname = document.getElementById('fullname');
-        const password = document.getElementById('password');
-        const email = document.getElementById('email');
-        const check_username = document.querySelector('.check-username');
-        const check_fullname = document.querySelector('.check-fullname');
-        const check_password = document.querySelector('.check-password');
-        const check_email = document.querySelector('.check-email');
-        if (!username.value) {
-            e.preventDefault();
-            check_username.innerHTML = '<div>※Tên người dùng không được để trống</div>';
-        }
-        if (!fullname.value) {
-            e.preventDefault();
-            check_fullname.innerHTML = '<div>※Tên người dùng không được để trống</div>';
-        }
-        if (!password.value) {
-            e.preventDefault();
-            check_password.innerHTML = '<div>※Mật khẩu không được để trống</div>';
-        }
-        if (!email.value) {
-            e.preventDefault();
-            check_email.innerHTML = '<div>※Email không được để trống</div>';
-        }
 
-    })
-
-</script>
+    <div class="popup-confirm" style="display: none;" id="popup-confirm">
+        <div class="popup-container">
+            <div class="popup-header">
+                <p>Thông báo</p>
+                <img src="./img/Vector.png" alt="" class="exit-btn" id="btn-close" width="24px" height="24px">
+            </div>
+            <div class="popup-body2">
+                <div style="position: relative;">
+                    <p>Bạn có chắc chắn lưu lại thay đổi ?<span style="padding-top: 10px;">*</span></p>
+                </div>
+                <div class="button-group2">
+                    <div><button class="btn-ok">Ok</button></div>
+                    <div><button class="btn-huy">Cancel</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </html>
+<script>
+    const btn_open = document.getElementById('btn-open');
+    const btn_close = document.getElementById('btn-close');
+    const popup_confirm_cancel = document.getElementById('popup-confirm');
+    btn_open.addEventListener('click', (e) => {
+        e.preventDefault();
+        popup_confirm_cancel.style.display = 'block';
+
+    });
+    btn_close.addEventListener('click', () => {
+        popup_confirm_cancel.style.display = 'none';
+    });
+</script>
