@@ -45,23 +45,40 @@
 <script>
     document.getElementById('form').addEventListener('submit', (e) => {
         const alert_danger_empty = document.querySelector('.alert-danger-empty');
-        const login_identity = document.getElementById('login_identity').value;
-        const password = document.getElementById('password').value;
+        const loginInput = document.getElementById('login_identity');
+        const passwordInput = document.getElementById('password');
+        const login_identity = loginInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        let errorMessage = '';
+        let firstInvalid = null;
+
+        // Reset viền đỏ
+        loginInput.classList.remove('input-error');
+        passwordInput.classList.remove('input-error');
+
         if (!login_identity) {
-            e.preventDefault();
-            alert_danger_empty.innerHTML = '<div>※Tên đăng nhập hoặc mật khẩu lỗi. Vui lòng thử lại !</div>';
+            loginInput.classList.add('input-error');
+            if (!firstInvalid) firstInvalid = loginInput;
+            errorMessage = '※Tên đăng nhập không được để trống!';
         }
 
         if (!password) {
-            e.preventDefault();
-            alert_danger_empty.innerHTML = '<div>※Vui lòng nhập mật khẩu</div>';
+            passwordInput.classList.add('input-error');
+            if (!firstInvalid) firstInvalid = passwordInput;
+            errorMessage = '※Mật khẩu không được để trống!';
         }
 
         if (!login_identity && !password) {
-            e.preventDefault();
-            alert_danger_empty.innerHTML = '<div>※Tên đăng nhập hoặc mật khẩu lỗi. Vui lòng thử lại !</div>';
+            errorMessage = '※Tên đăng nhập và mật khẩu không được để trống!';
         }
-    })
+
+        if (errorMessage) {
+            e.preventDefault();
+            alert_danger_empty.innerHTML = `<div>${errorMessage}</div>`;
+            if (firstInvalid) firstInvalid.focus();
+        }
+    });
 </script>
 
 </html>
